@@ -1,0 +1,40 @@
+<% provide(:title, @title) %>
+
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3>Your stats</h3>
+    <div>
+        <% if @user.microposts.count == 0 %>
+            You don't have any micropost :(
+        <% else %>
+            <%= pluralize(@user.microposts.count, 'micropost') %>
+        <% end %>
+    </div>
+    <div>
+        <% if @user.followers.count == 0 %>
+            You don't have any followers :(
+        <% else %>
+            <%= pluralize(@user.followers.count, 'follower', plural: 'followers') %>
+        <% end %>
+    </div>
+    <div>
+        <% if @user.following.count == 0 %>
+            You don't follow any <%= link_to "users", users_path %> :( 
+        <% else %>
+            <%= @user.following.count %> following
+        <% end %>
+    </div>
+  </div>
+</div>
+
