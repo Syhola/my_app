@@ -1,3 +1,18 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dash {
+    border: 1px solid silver;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.border {
+    border: 1px solid black;
+}
+
+.count {
+    font-size: 3em;
+}

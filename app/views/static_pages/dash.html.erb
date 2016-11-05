@@ -1,7 +1,29 @@
 <% provide(:title, "Dash") %>
 
-<h1>Dashboard</h1>
+<h1>Realtime Dashboard</h1>
   <!-- Dash of the app -->
-  <p>Upcoming!</p>
-  <p><%= Micropost.all.count %></p>
-  <p><%= User.all.count %></p>
+  <div class="row center">
+    <div class="col-md-5 col-md-offset-1">
+      <div class="col-md-12 dash">
+        <h2>Total Wankytimes:</h2>
+        <span class="count"><%= Micropost.all.count %></span>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="col-md-12 dash">
+        <h2>Total Wankyusers:</h2>
+        <span class="count"><%= User.all.count %></span>
+      </div>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-12 dash">
+        <h2>Target Users:</h2>
+        <div class="progress">
+          <div class="progress-bar progress-bar-striped" id="progressbar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+            <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Coming soon! 
+          </div> 
+        </div>
+      </div>
+    </div> 
+  </div>
+  
