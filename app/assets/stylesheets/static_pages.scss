@@ -9,8 +9,22 @@
     padding-bottom: 20px;
 }
 
-.border {
-    border: 1px solid black;
+.yourstat {
+    border: 1px solid silver;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    height: 90px;
+    line-height: 90px;
+    p {
+        height: 90px;
+        line-height: 90px;
+        span {
+            vertical-align:middle;
+            display:inline-block;
+            line-height: 1;
+        }
+    }
 }
 
 .count {

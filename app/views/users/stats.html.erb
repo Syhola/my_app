@@ -14,26 +14,41 @@
   </aside>
   <div class="col-md-8">
     <h3>Your stats</h3>
-    <div>
-        <% if @user.microposts.count == 0 %>
-            You don't have any micropost :(
-        <% else %>
-            <%= pluralize(@user.microposts.count, 'micropost') %>
-        <% end %>
-    </div>
-    <div>
-        <% if @user.followers.count == 0 %>
-            You don't have any followers :(
-        <% else %>
-            <%= pluralize(@user.followers.count, 'follower', plural: 'followers') %>
-        <% end %>
-    </div>
-    <div>
-        <% if @user.following.count == 0 %>
-            You don't follow any <%= link_to "users", users_path %> :( 
-        <% else %>
-            <%= @user.following.count %> following
-        <% end %>
+    <div class="row center">
+        <div class="col-md-4">
+            <div class="col-md-12 yourstat">
+                <% if @user.microposts.count == 0 %>
+                    <p>You don't have any wankytime :( </br>
+                    Post your first one <%= link_to "now", root_path %></p>
+                <% else %>
+                    <%= pluralize(@user.microposts.count, 'wankytime') %>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-12 yourstat">
+                <% if @user.followers.count == 0 %>
+                    <p><span>You don't have any followers :(</span></p>
+                <% else %>
+                    <%= pluralize(@user.followers.count, 'follower', plural: 'followers') %>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-12 yourstat">
+                <% if @user.following.count == 0 %>
+                    <p>You don't follow any unsers :( </br>
+                    Start following <%= link_to "users", users_path %></p> 
+                <% else %>
+                    <%= @user.following.count %> following
+                <% end %>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12 yourstat">
+                <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Your map's coming soon!
+            </div>
+        </div>
     </div>
   </div>
 </div>
