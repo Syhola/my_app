@@ -1,55 +1,82 @@
 <% provide(:title, @title) %>
 
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section class="stats">
-      <%= render 'shared/stats' %>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <h3>Your stats</h3>
-    <div class="row center">
-        <div class="col-md-4">
-            <div class="col-md-12 yourstat">
+<h1>Your stats</h1>
+<div class="row center">
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">WankyTimes #</div>
+            <div class="panel-body">
                 <% if @user.microposts.count == 0 %>
-                    <p>You don't have any wankytime :( </br>
-                    Post your first one <%= link_to "now", root_path %></p>
+                    You don't have any wankytime </br>
+                    Post your first one <%= link_to "now", root_path %>
                 <% else %>
                     <%= pluralize(@user.microposts.count, 'wankytime') %>
                 <% end %>
             </div>
+            <div class="panel-footer text-right">
+                <a href="#" class="share">Share <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a>
+            </div>
         </div>
-        <div class="col-md-4">
-            <div class="col-md-12 yourstat">
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Followers #</div>
+            <div class="panel-body">
                 <% if @user.followers.count == 0 %>
-                    <p><span>You don't have any followers :(</span></p>
+                    You don't have any followers
                 <% else %>
                     <%= pluralize(@user.followers.count, 'follower', plural: 'followers') %>
                 <% end %>
             </div>
+            <div class="panel-footer text-right">
+                <a href="#">Share <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a>
+            </div>
         </div>
-        <div class="col-md-4">
-            <div class="col-md-12 yourstat">
+    </div>
+    
+    <div class="col-md-4">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Following #</div>
+            <div class="panel-body">
                 <% if @user.following.count == 0 %>
-                    <p>You don't follow any unsers :( </br>
-                    Start following <%= link_to "users", users_path %></p> 
+                    You don't follow any users </br>
+                    Start following <%= link_to "users", users_path %>
                 <% else %>
                     <%= @user.following.count %> following
                 <% end %>
             </div>
-        </div>
-        <div class="col-md-12">
-            <div class="col-md-12 yourstat">
-                <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Your map's coming soon!
+            <div class="panel-footer text-right">
+                <a href="#">Share <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a>
             </div>
         </div>
     </div>
-  </div>
+    
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Wanky Map</div>
+            <div class="panel-body">
+                <p></p><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Your map's coming soon!</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5363928.549073896!2d19.711913812499983!3d48.97051158461561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1478955558630" 
+                        frameborder="0" class="map" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="#">Share <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Wanky Graph</div>
+            <div class="panel-body">
+                <p></p><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Your graph's coming soon!</p>
+                <%= line_chart User.group(:created_at).count %>
+            </div>
+            <div class="panel-footer text-right">
+                <a href="#">Share <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a>
+            </div>
+        </div> 
+    </div>
 </div>
-

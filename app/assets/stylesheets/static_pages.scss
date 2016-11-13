@@ -2,31 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.dash {
-    border: 1px solid silver;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-}
-
-.yourstat {
-    border: 1px solid silver;
-    border-radius: 15px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    height: 90px;
-    line-height: 90px;
-    p {
-        height: 90px;
-        line-height: 90px;
-        span {
-            vertical-align:middle;
-            display:inline-block;
-            line-height: 1;
-        }
-    }
-}
-
 .count {
     font-size: 3em;
+}
+
+.panel-body {
+    min-height: 80px;
+    min-height: 100px;
+}
+
+.paginate {
+    text-align: center;
+}
+
+.map {
+    height: 400px;
+    width: 90%;
+    border-radius: 5px;
 }

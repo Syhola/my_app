@@ -15,7 +15,7 @@
       </section>
     </aside>
     <div class="col-md-8">
-      <h3>Micropost Feed</h3>
+      <h3>Wankytimes Feed</h3>
       <%= render 'shared/feed' %>
     </div>
   </div>
@@ -23,15 +23,36 @@
 <% else %>
 
   <div class="center jumbotron">
-    <h1>Welcome to the My_App App</h1>
+    <h1>Welcome to the Wanky App</h1>
   
-    <h2>
-      This is the home page of the
-      <a href="#">My_App</a>
-      application.
-    </h2>
+    <h2>Sign up now to get a full and free access to the <a href="/">Wanky App</a>! Already <%= Micropost.all.count %> Wanky times have been posted on the App, add yours!</h2>
   
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  </div>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h2>WankyApp, What is it?</h2>
+        <p class="center">WankyApp is a web application that allows you to register all your wanky moments and keep stats about them!</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h2>WankyApp, How does it work?</h2>
+        <p class="center"><%= link_to "Sign up now", signup_path %> to access the WankyApp! Once it's done, post your wanky moments, add a comment to each of them and the place you did it! Follow friends if you want to stay updated of their activity and share your stats with everyone you want, easily, through your stats account!</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h2>WankyApp, How many users are registered?</h2>
+        <p class="center">Our policy is to be as transparent as possible. You can have <%= link_to "a view", dash_path %> of the number of registered users as well as the total of wanky moments posted on our app.</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h2>WankyApp, Do I keep a total control of the content I post?</h2>
+        <p class="center">Of course! You keep a total control of what you post and you can delete the content at every moment. You also can delete your own account but we really hope it will never happen ;)</p>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h2>Convinced?</h2>
+        <p class="center"><%= link_to "Ready to sign up!", signup_path, class: "btn btn-lg btn-primary" %></p>
+      </div>
+    </div>
   </div>
 
 <% end %>
