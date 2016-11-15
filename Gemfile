@@ -12,6 +12,7 @@ gem 'jbuilder',     '2.4.1'
 # Graph
 gem 'chartkick'
 gem 'groupdate'
+gem 'dateslices'
 
 # Fake users in db
 gem 'faker',        '1.6.3'
