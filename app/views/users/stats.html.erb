@@ -72,7 +72,7 @@
             <div class="panel-heading">Wanky Graph</div>
             <div class="panel-body">
                 <p></p><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Your graph's coming soon!</p>
-                <%= area_chart @microposts.group_by_day( :created_at, "count" ) %>
+                <%= area_chart User.group_by_day( :created_at, "count" ) %>
             </div>
             <div class="panel-footer text-right">
                 <a href="#">Share <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></a>
