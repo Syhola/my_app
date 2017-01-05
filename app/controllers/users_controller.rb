@@ -64,7 +64,7 @@ class UsersController < ApplicationController
   def stats
     @title = "Stats"
     @user  = User.find(params[:id])
-    @microposts = Micropost.all
+    @microposts = @user.microposts
     render 'stats'
   end
   
